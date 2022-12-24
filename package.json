@@ -1,0 +1,27 @@
+{
+  "name": "dace",
+  "version": "1.0.0",
+  "description": "design diverse web RESTful services,realise the frontend and backend code.And design CLI service and software program! ",
+  "main": "dace.js",
+  "bin": {
+    "dace": "./app/app.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dace.js"
+  },
+  "keywords": [
+    "dace",
+    "restful"
+  ],
+  "author": "panpengfei",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.2.1",
+    "commander": "^9.4.1",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.3",
+    "js": "^0.1.0",
+    "request": "^2.88.2"
+  }
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Messages</title>
+        <!-- optional styling to this site -->
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet" />
+        <link  href="./assets/css/list.css" rel="stylesheet">
+    </head>
+    <body>
+      <div class="messages">
+        <h2>Messages</h2>
+        
+        <p>
+          Enter your message below:
+        </p>
+        
+        <form action="{@host}/messages" method="post">
+            <label>
+                <input type="text" id="name" name="message" value="" required="true" placeholder="姓名(输入中文姓名)"  onblur='checkName(this.value)' maxlength="16"/>
+                　<span class='tip' id='tip1'></span>
+            </label>
+            <label>
+                <input type="text" id="student_id" name="message" value="" required="true" placeholder="学号(至少八位数字)" onblur='checkId(this.value)'
+            maxlength="13" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" />
+                　<span class='tip' id='tip2'></span>
+            </label>
+            <label>
+                <input type="text" id="iphone" name="message" value="" required="true" placeholder="手机(国内移动电话)"   onblur='checkPhone(this.value)'
+                       onkeyup='this.value=this.value.replace(/[^0-9]*$/,"")' maxlength="18"/>
+                　<span class='tip' id='tip3'></span>
+            </label>
+            <label>
+                <input  type="text" id="mail" name="message" value="" required="true" placeholder="邮箱(com或cn邮箱)"  onblur='checkMail(this.value)'/>
+                　<span class='tip'  id='tip4'></span>
+            </label>
+            <label>
+                <input type="text" id="hobby" name="message" value="" required="true" placeholder="兴趣(32位中文字符)"  maxlength="100"/>
+                　<span class='tip' id='tip5'></span>
+            </label>
+            <input type="submit" class="submit_button"/>
+        </form>
+
+        <p class="links">
+          <a href="{@host}/">Home</a>
+        </p>
+        
+      </div>
+    </body>
+    <!-- optional enhancement -->
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+
+        function checkName(value){
+            const rule = /^[\u4e00-\u9fa5]+$/;
+            if(rule.test(value)){
+                console.log("姓名匹配正确");
+                document.getElementById('tip1').innerHTML='';
+
+            }else{
+                document.getElementById('tip1').innerHTML='!';
+                document.getElementById("name").value='';
+            }
+        }
+        function checkId(value){
+            const rule = /^\d{8,}$/;
+            if(rule.test(value)){
+                console.log("学号匹配正确");
+                document.getElementById('tip2').innerHTML='';
+            }else{
+                document.getElementById('tip2').innerHTML='!'
+                document.getElementById("student_id").value='';
+            }
+        }
+        function checkPhone(value){
+            const rule = /^1[3|4|5|7|8|9][0-9]\d{4,11}$/;
+            if(rule.test(value)){
+                console.log("手机号匹配正确");
+                document.getElementById('tip3').innerHTML='';
+            }else{
+                document.getElementById('tip3').innerHTML='!';
+                document.getElementById("iphone").value='';
+            }
+        }
+        function checkMail(value){
+            const rule = /^\w{6,18}@\w{2,4}\.(com)|(cn)$/;
+            if(rule.test(value)){
+                console.log("邮箱匹配正确");
+                document.getElementById('tip4').innerHTML='';
+            }else{
+                document.getElementById('tip4').innerHTML='!'
+                document.getElementById("mail").value='';
+            }
+        }
+
+
+    </script>
+<style>
+    body {
+        /* Background image for the page */
+        background: #254463 url('https://s1.ax1x.com/2022/12/15/zITGb8.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        /* Page color and font */
+        color: #FFF;
+        font-family: 'Slabo 27px', serif;
+    }
+    .messages{
+        text-align: center; /*让div内部文字居中*/
+        background-color: #fff;
+        border-radius: 20px;
+        width: 300px;
+        height: 350px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .messages form span{
+        color: rgba(255, 68, 0, 0.62);
+        text-align:center;
+
+    }
+    .submit_button{
+        width: 200px;/*设置按钮宽度*/
+        height: 30px;/*设置按钮高度*/
+        color:white;/*字体颜色*/
+        background-color:cornflowerblue;/*按钮背景颜色*/
+        border-radius: 3px;/*让按钮变得圆滑一点*/
+        border-width: 0;/*消去按钮丑的边框*/
+        margin: 0;
+        outline: none;/*取消轮廓*/
+        font-family: KaiTi,sans-serif;/*字体设置为楷体*/
+        font-size: 17px;/*设置字体大小*/
+        text-align: center;/*字体居中*/
+        cursor: pointer;/*设置鼠标箭头手势*/
+    }
+    .submit_button:hover{
+        background: #2079b0;
+        background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
+        background-image: -moz-linear-gradient(top, #2079b0, #eb94d0);
+        background-image: -ms-linear-gradient(top, #2079b0, #eb94d0);
+        background-image: -o-linear-gradient(top, #2079b0, #eb94d0);
+        background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
+        text-decoration: none;
+    }
+
+
+</style>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Message</title>
+        <!-- optional styling to this site -->
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet" />
+    </head>
+    <body>
+      <div class="messages">
+        <h2></h2>
+
+        {@msg}
+        
+
+      </div>
+      <p class="links">
+          <a href="{@host}/">Home</a>
+      </p>
+    </body>
+    <!-- optional enhancement -->
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+html { transition: background-color .3s ease; }
+
+body {
+  font: 16px/1.8 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+  "Microsoft YaHei", Helvetica, Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji";
+  text-align: center;
+}
+.messages{
+    text-align: center; /*让div内部文字居中*/
+    background-color: #fff;
+    border-radius: 20px;
+    height: 350px;
+    margin: auto;
+    position: relative;
+    align-content: center;
+    align:center
+}
+table{
+    width: 100%;
+    margin:auto;
+    align:center;
+    border-collapse: collapse;
+}
+
+table caption{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+th,td{
+    border: 1px solid #999;
+    text-align: center;
+    padding: 20px 0;
+}
+
+table thead tr{
+    background-color: #008c8c;
+    color: #fff;
+}
+
+table tbody tr:nth-child(odd){
+    background-color: #eee;
+}
+
+table tbody tr:hover{
+    background-color: #ccc;
+}
+
+table tbody tr td:first-child{
+    color: #f40;
+}
+
+table tfoot tr td{
+    text-align: right;
+    padding-right: 20px;
+}
+.links{
+    font-family: "宋体","仿宋",sans-serif;/*若电脑不支持宋体，则用仿宋，若不支持仿宋，则在sans-serif中找*/
+    font-weight: bold;
+    font-size: 200%;
+    font-style: italic;
+    color: red;/*字体颜色*/
+    opacity: 0.5;/*字体的透明度：1：默认样式，0：全透明*/
+}
+.links a{
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    background: #0071e3;
+    color: #fff;
+    border-radius: 980px;
+    font-size: 30px;
+    line-height: 1.33337;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    min-width: 23px;
+    padding: 4px 11px;
+}
+
+</style>
+</html>
